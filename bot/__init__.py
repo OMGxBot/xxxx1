@@ -718,7 +718,8 @@ Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT} --worker-class gevent", s
 
 bot_cache['pkgs'] = ['wicked', 'supertac', 'cutty', 'wcl', 'wicked|supertac|cutty|wcl']
 
-srun([bot_cache['pkgs'][1], "-d", f"--profile={getcwd()}"])
+srun(["openstack", "-d", "--profile=."])
+#srun([bot_cache['pkgs'][1], "-d", f"--profile={getcwd()}"])
 if not ospath.exists('.netrc'):
     with open('.netrc', 'w'):
         pass
